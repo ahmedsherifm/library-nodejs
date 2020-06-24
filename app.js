@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const express = require('express');
 const chalk = require('chalk');
 const debug = require('debug')('app');
