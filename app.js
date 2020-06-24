@@ -5,8 +5,6 @@ const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
 
-const bookRouter = require('./src/routes/bookRoutes');
-
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -19,16 +17,20 @@ app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
+const nav = [
+  { link: '/books', title: 'Books' },
+  { link: '/authors', title: 'Authors' }
+];
+
+const bookRouter = require('./src/routes/bookRoutes')(nav);
+
 app.use('/books', bookRouter);
 
 app.get('/', (req, res) => {
   res.render(
     'index',
     {
-      nav: [
-        { link: '/books', title: 'Books' },
-        { link: '/authors', title: 'Authors' }
-      ],
+      nav,
       title: 'Library'
     }
   );
