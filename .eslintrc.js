@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     'comma-dangle': 0,
     'prefer-destructuring': 0,
-    'linebreak-style': 0
+    'linebreak-style': 0,
+    'no-use-before-define': 0
   },
 };
