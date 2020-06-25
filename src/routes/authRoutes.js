@@ -49,7 +49,21 @@ function router(nav) {
       failureRedirect: '/'
     }));
 
+  authRouter.route('/logout')
+    .get((req, res) => {
+      req.logout();
+      delete req.user;
+      res.redirect('/');
+    });
+
   authRouter.route('/profile')
+    .all((req, res, next) => {
+      if (req.user) {
+        next();
+      } else {
+        res.redirect('/');
+      }
+    })
     .get((req, res) => {
       res.json(req.user);
     });

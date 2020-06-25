@@ -41,7 +41,8 @@ app.set('view engine', 'ejs');
 
 const nav = [
   { link: '/books', title: 'Books' },
-  { link: '/authors', title: 'Authors' }
+  { link: '/authors', title: 'Authors' },
+  { link: '/auth/logout', title: 'Logout' }
 ];
 
 const bookRouter = require('./src/routes/bookRoutes')(nav);
