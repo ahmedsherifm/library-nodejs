@@ -10,7 +10,7 @@ function router(nav) {
       const url = 'mongodb://localhost:27017';
       const dbName = 'libraryApp';
 
-      (async function mongo() {
+      (async function getBooks() {
         let client;
         try {
           client = await MongoClient.connect(url);
@@ -41,7 +41,7 @@ function router(nav) {
       const url = 'mongodb://localhost:27017';
       const dbName = 'libraryApp';
 
-      (async function mongo() {
+      (async function getBookById() {
         let client;
         try {
           client = await MongoClient.connect(url);
