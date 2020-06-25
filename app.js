@@ -29,7 +29,7 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({ secret: 'library', resave: false, saveUninitialized: true }));
+app.use(session({ secret: 'library' }));
 
 require('./src/config/passport.js')(app);
 
