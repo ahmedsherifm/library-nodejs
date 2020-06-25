@@ -42,6 +42,7 @@ app.set('view engine', 'ejs');
 const nav = [
   { link: '/books', title: 'Books' },
   { link: '/authors', title: 'Authors' },
+  { link: '/auth/profile', title: 'Profile' },
   { link: '/auth/logout', title: 'Logout' }
 ];
 
